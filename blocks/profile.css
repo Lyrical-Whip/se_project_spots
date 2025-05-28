@@ -43,22 +43,31 @@
   width: 149px;
   height: 52px;
   border-radius: 8px;
-  gap: 8px;
-  padding-top: 18px;
-  padding-right: 32px;
-  padding-left: 32;
-  padding-bottom: 18px;
+  padding: 18px 15px;
+  color: #fcf5e5;
+  background-color: #212121;
+}
+
+.profile__add-btn:hover {
+  opacity: 80%;
   color: #212121;
+  cursor: pointer;
 }
 
 .profile__edit-btn {
   margin-top: auto;
   display: flex;
-  padding: 6px 12px;
-  width: Hug (107.34px);
-  height: Hug (16px);
+  padding: 0;
+  background: transparent;
+  border: none;
   gap: 8px;
-  opacity: 70px;
+  opacity: 70%;
+  color: #212121;
+}
+
+.profile__edit-btn:hover {
+  opacity: 100%;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
@@ -69,8 +78,18 @@
     text-align: center;
     padding-top: 20px;
   }
+
+  .profile__edit-btn {
+    margin: 0;
+    align-items: center;
+    width: 288px;
+    height: 52px;
+  }
+
   .profile__add-btn {
     margin: 0;
+    align-items: center;
+    width: 288px;
   }
 
   .profile__avatar {
@@ -80,6 +99,7 @@
   }
   .profile__name {
     font-size: 20px;
+    color: #212121;
     margin: 0 0 6px;
     max-width: 288px;
   }
@@ -89,6 +109,6 @@
   .profile__description {
     margin: 0 0 32px;
     max-width: 288px;
-    font-color: #212121;
+    color: #212121;
   }
 }
