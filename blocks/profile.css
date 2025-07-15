@@ -2,6 +2,8 @@
   display: flex;
   padding: 34px 0 20px;
   border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
+  margin: 0 auto;
+  max-width: 1280px;
 }
 
 .profile__avatar {
@@ -24,6 +26,7 @@
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  color: #212121;
 }
 
 .profile__description {
@@ -46,24 +49,23 @@
   padding: 18px 15px;
   color: #fcf5e5;
   background-color: #212121;
-  border: none
-  display: flex
-  align-items: center
-  justify-items: center
-  gap: 8px
-  margin-top: auto
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 8px;
+  margin-top: auto;
 }
 
 .profile__add-btn:hover {
   opacity: 80%;
   cursor: pointer;
-  border
 }
 
 .profile__edit-btn {
   font-weight: 500;
-  font-size: 16px
-  line-height: 100%
+  font-size: 16px;
+  line-height: 100%;
   margin-top: auto;
   display: flex;
   padding: 0;
