@@ -8,6 +8,15 @@
   margin: 0;
 }
 
+.card__title {
+  max-width: 425px;
+  height: 24px;
+  font-size: 20px;
+  margin: 0;
+  letter-spacing: 0;
+  line-height: 120%;
+}
+
 .card__image {
   height: 413px;
   width: 100%;
