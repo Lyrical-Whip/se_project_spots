@@ -10,11 +10,15 @@
 
 .card__title {
   max-width: 425px;
-  height: 24px;
   font-size: 20px;
+  font-weight: 500;
   margin: 0;
   letter-spacing: 0;
   line-height: 120%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #212121;
 }
 
 .card__image {
@@ -32,6 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 12px 0 0;
 }
 
 .card__like-btn {
@@ -60,11 +65,7 @@
 
   .card__title {
     max-width: 250px;
-    height: 24px;
     font-size: 16px;
-    margin: 0;
-    letter-spacing: 0;
-    line-height: 100%;
   }
 
   .card__like-btn {
