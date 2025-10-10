@@ -109,60 +109,109 @@
       <footer class="footer">
         <p class="footer__copyright">&copy;Elijah Raleigh 2025</p>
       </footer>
-      <div class="modal">
-        <div class="modal__container">
-          <button type="button" class="modal__close-btn">X</button>
-          <h2 class="modal__title">Edit profile</h2>
-          <form class="modal__form">
-            <label for="profile-name-input" class="modal__label">
-              Name
-              <input
-                id="profile-name-input"
-                type="text"
-                class="modal__input"
-                placeholder="Elijah Raleigh"
-              />
-            </label>
-            <label for="profile-description-input" class="modal__label">
-              Description
-              <input
-                id="profile-description-input"
-                type="text"
-                class="modal__input"
-                placeholder="Describe yourself"
-              />
-            </label>
-            <button type="submit" class="modal__submit-btn">Save</button>
-          </form>
-        </div>
-      </div>
       <div class="modal modal_is-opened">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">X</button>
           <h2 class="modal__title">Edit profile</h2>
           <form class="modal__form">
-            <label for="card-image-input" class="modal__label">
-              Image link
-              <input
-                id="card-image-input"
-                type="url"
-                class="modal__input"
-                placeholder="Place a link to the picture"
-              />
-            </label>
+            <label for="profile-name-input" class="modal__label"> Name </label>
+            <input
+              id="profile-name-input"
+              type="text"
+              class="modal__input"
+              placeholder="Elijah Raleigh"
+            />
             <label for="profile-description-input" class="modal__label">
               Description
-              <input
-                id="profile-description-input"
-                type="text"
-                class="modal__input"
-                placeholder="Describe yourself"
-              />
             </label>
+            <input
+              id="profile-description-input"
+              type="text"
+              class="modal__input"
+              placeholder="Describe yourself"
+            />
+            <button type="submit" class="modal__submit-btn">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal">
+        <div class="modal__container">
+          <button type="button" class="modal__close-btn"></button>
+          <h2 class="modal__title">New post</h2>
+          <form class="modal__form">
+            <label for="card-image-input" class="modal__label">
+              Image link
+            </label>
+            <input
+              id="card-image-input"
+              type="url"
+              class="modal__input"
+              placeholder="Place a link to the picture"
+            />
+            <label for="card-title-input" class="modal__label"> Title </label>
+            <input
+              id="card-title-input"
+              type="text"
+              class="modal__input"
+              placeholder="Title of your post"
+            />
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get modal elements
+        const editProfileModal = document.querySelectorAll(".modal")[0];
+        const newPostModal = document.querySelectorAll(".modal")[1];
+
+        // Get buttons that open modals
+        const editProfileBtn = document.querySelector(".profile__edit-btn");
+        const newPostBtn = document.querySelector(".profile__add-btn");
+
+        // Get close buttons
+        const closeButtons = document.querySelectorAll(".modal__close-btn");
+
+        // Function to open modal
+        function openModal(modal) {
+          modal.classList.add("modal_is-opened");
+        }
+
+        // Function to close modal
+        function closeModal(modal) {
+          modal.classList.remove("modal_is-opened");
+        }
+
+        // Event listeners for opening modals
+        editProfileBtn.addEventListener("click", () =>
+          openModal(editProfileModal)
+        );
+        newPostBtn.addEventListener("click", () => openModal(newPostModal));
+
+        // Event listeners for closing modals
+        closeButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const modal = this.closest(".modal");
+            closeModal(modal);
+          });
+        });
+
+        // Close modal when clicking outside the modal container
+        document.addEventListener("click", function (event) {
+          if (event.target.classList.contains("modal")) {
+            closeModal(event.target);
+          }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            const openModals = document.querySelectorAll(".modal_is-opened");
+            openModals.forEach((modal) => closeModal(modal));
+          }
+        });
+      });
+    </script>
   </body>
 </html>

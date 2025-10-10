@@ -3,37 +3,56 @@
   background-color: #00000080;
   position: fixed;
   top: 0;
-  right: 0;
   bottom: 0;
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
 }
 
 .modal_is-opened {
   visibility: visible;
+  opacity: 1;
 }
 
 .modal__container {
-  max-width: 730px;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: #fff;
-  padding: 32px 50px;
+  padding: 34px 36px;
+  max-width: 430px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
   position: relative;
 }
 
 .modal__close-btn {
   position: absolute;
-  top: 32px;
-  right: 50px;
+  top: -40px;
+  right: -40px;
   width: 40px;
   height: 40px;
+  background: transparent url("../images/close-icon.svg") center no-repeat;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
 }
+
+.modal__close-btn:hover {
+  opacity: 0.6;
+}
+
 .modal__title {
-  margin: 0 0 32px;
+  margin: 0 0 24px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #000000;
 }
 
 .modal__form {
@@ -43,11 +62,24 @@
 
 .modal__label {
   margin: 0 0 32px;
+  margin-bottom: 8px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #2f71e5;
 }
 
 .modal__input {
-  display: block;
-  margin: 8px 0 0;
+  margin-bottom: 24px;
+  padding: 0 0 10px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #000000;
 }
 
 .modal__input::placeholder {
@@ -55,5 +87,36 @@
 }
 
 .modal__submit-btn {
-  max-width: 156px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  padding: 14px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 8px;
+}
+
+.modal__submit-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive design for modal */
+@media screen and (max-width: 540px) {
+  .modal__container {
+    width: 100%;
+    margin: 0 19px;
+    padding: 25px 22px;
+  }
+
+  .modal__close-btn {
+    top: -36px;
+    right: 0;
+    width: 26px;
+    height: 26px;
+  }
 }
