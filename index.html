@@ -29,7 +29,7 @@
               <img src="./images/pencil.svg" alt="Pencil icon" />Edit Profile
             </button>
           </div>
-          <button type="button" class="profile__add-btn">
+          <button type="button" class="profile__new-post-btn">
             <img src="./images/plus.svg" alt="Plus icon" />New Post
           </button>
         </section>
@@ -111,7 +111,7 @@
       </footer>
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn">X</button>
+          <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">Edit profile</h2>
           <form class="modal__form">
             <label for="profile-name-input" class="modal__label"> Name </label>
@@ -139,9 +139,7 @@
           <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">New post</h2>
           <form class="modal__form">
-            <label for="card-image-input" class="modal__label">
-              Image link
-            </label>
+            <label for="card-image-input" class="modal__label"> </label>
             <input
               id="card-image-input"
               type="url"
@@ -160,58 +158,6 @@
         </div>
       </div>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Get modal elements
-        const editProfileModal = document.querySelectorAll(".modal")[0];
-        const newPostModal = document.querySelectorAll(".modal")[1];
-
-        // Get buttons that open modals
-        const editProfileBtn = document.querySelector(".profile__edit-btn");
-        const newPostBtn = document.querySelector(".profile__add-btn");
-
-        // Get close buttons
-        const closeButtons = document.querySelectorAll(".modal__close-btn");
-
-        // Function to open modal
-        function openModal(modal) {
-          modal.classList.add("modal_is-opened");
-        }
-
-        // Function to close modal
-        function closeModal(modal) {
-          modal.classList.remove("modal_is-opened");
-        }
-
-        // Event listeners for opening modals
-        editProfileBtn.addEventListener("click", () =>
-          openModal(editProfileModal)
-        );
-        newPostBtn.addEventListener("click", () => openModal(newPostModal));
-
-        // Event listeners for closing modals
-        closeButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-            const modal = this.closest(".modal");
-            closeModal(modal);
-          });
-        });
-
-        // Close modal when clicking outside the modal container
-        document.addEventListener("click", function (event) {
-          if (event.target.classList.contains("modal")) {
-            closeModal(event.target);
-          }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener("keydown", function (event) {
-          if (event.key === "Escape") {
-            const openModals = document.querySelectorAll(".modal_is-opened");
-            openModals.forEach((modal) => closeModal(modal));
-          }
-        });
-      });
-    </script>
+    <script src="scripts/index.js"></script>
   </body>
 </html>
